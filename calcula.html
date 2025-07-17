@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Calculadora de Consumo | Energía Colombia</title>
+  <link rel="stylesheet" href="estilo.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+  <header>
+    <div class="container header-container">
+      <div class="logo">
+        <i class="fas fa-bolt"></i>
+          <a href="index.html" class="logo">Energía Colombia</a>
+      </div>
+      <nav>
+        <ul>
+          <li><a href="index.html">Inicio</a></li>
+          <li class="dropdown">
+            <a href="#">Energías <i class="fas fa-chevron-down"></i></a>
+            <ul class="dropdown-menu">
+              <li><a href="hidroelectrica.html">Hidroeléctrica</a></li>
+              <li><a href="solar.html">Solar</a></li>
+              <li><a href="eolica.html">Eólica</a></li>
+              <li><a href="biomasa.html">Biomasa</a></li>
+              <li><a href="gas.html">Gas Natural</a></li>
+              <li><a href="carbon.html">Carbón</a></li>
+              <li><a href="acpm.html">ACPM</a></li>
+            </ul>
+          </li>
+          <li><a href="calcula.html">Calculadora</a></li>
+          <li><a href="quienes.html">Nosotros</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <section class="calculator-hero">
+    <div class="hero-content">
+      <h1>Calculadora de Consumo Energético</h1>
+      <p>Descubre cuánta energía consumes y cómo puedes optimizar tu uso para ahorrar y ser más sostenible</p>
+    </div>
+  </section>
+
+  <section class="calculator-section">
+    <div class="container">
+      <div class="calculator-container">
+        <div class="calculator-intro">
+          <h2>¿Cuánta energía consumes?</h2>
+          <p>Esta herramienta te permite estimar el consumo eléctrico de tus electrodomésticos y compararlo con los promedios nacionales. Conocer tu consumo es el primer paso para reducir tu huella energética y ahorrar en tu factura de luz.</p>
+        </div>
+        
+        <div class="calculator-grid">
+          <form id="consumoForm" class="calculator-form">
+            <div class="form-group" id="estrato-group">
+              <label for="estrato">
+                <i class="fas fa-home"></i> Estrato socioeconómico:
+              </label>
+              <select id="estrato" class="form-control" required>
+                <option value="1">Estrato 1</option>
+                <option value="2">Estrato 2</option>
+                <option value="3">Estrato 3</option>
+                <option value="4" selected>Estrato 4</option>
+                <option value="5">Estrato 5</option>
+                <option value="6">Estrato 6</option>
+              </select>
+              <small class="form-hint">Selecciona tu estrato para calcular el costo exacto</small>
+            </div>
+            
+            <div class="form-group">
+              <label for="electrodomestico">
+                <i class="fas fa-plug"></i> Electrodoméstico o dispositivo:
+              </label>
+              <select id="electrodomestico" class="form-control" required>
+                <option value="">Selecciona un dispositivo</option>
+                <optgroup label="Electrodomésticos principales">
+                  <option value="nevera">Refrigerador (200W)</option>
+                  <option value="lavadora">Lavadora (500W)</option>
+                  <option value="secadora">Secadora de ropa (3000W)</option>
+                  <option value="horno">Horno eléctrico (2000W)</option>
+                </optgroup>
+                <optgroup label="Electrónica">
+                  <option value="tv">Televisor LED (150W)</option>
+                  <option value="computador">Computador de escritorio (300W)</option>
+                  <option value="portatil">Portátil (50W)</option>
+                  <option value="consola">Consola de videojuegos (150W)</option>
+                </optgroup>
+                <optgroup label="Climatización">
+                  <option value="aire">Aire acondicionado (1500W)</option>
+                  <option value="ventilador">Ventilador (100W)</option>
+                  <option value="calefactor">Calefactor eléctrico (2000W)</option>
+                </optgroup>
+                <optgroup label="Iluminación">
+                  <option value="bombillo">Bombillo LED (10W)</option>
+                  <option value="halogena">Lámpara halógena (50W)</option>
+                </optgroup>
+                <option value="otro">Otro (especificar potencia)</option>
+              </select>
+            </div>
+            
+            <div class="form-group" id="custom-power-group" style="display: none;">
+              <label for="potencia">
+                <i class="fas fa-bolt"></i> Potencia (Watts):
+              </label>
+              <input type="number" id="potencia" class="form-control" placeholder="Ej: 1200" min="1">
+              <small class="form-hint">Encuentra la potencia en la etiqueta del dispositivo o manual</small>
+            </div>
+            
+            <div class="form-row">
+              <div class="form-group">
+                <label for="horas">
+                  <i class="far fa-clock"></i> Horas/día:
+                </label>
+                <input type="number" id="horas" class="form-control" required min="0.1" max="24" step="0.1" placeholder="Ej: 2.5">
+              </div>
+              
+              <div class="form-group">
+                <label for="dias">
+                  <i class="far fa-calendar-alt"></i> Días/mes:
+                </label>
+                <input type="number" id="dias" class="form-control" required min="1" max="31" placeholder="Ej: 30">
+              </div>
+            </div>
+            
+            <div class="form-group">
+              <label for="cantidad">
+                <i class="fas fa-calculator"></i> Cantidad de dispositivos:
+              </label>
+              <input type="number" id="cantidad" class="form-control" value="1" min="1" max="10">
+            </div>
+            
+            <button type="submit" class="btn-calculate">
+              <i class="fas fa-calculator"></i> Calcular Consumo
+            </button>
+          </form>
+          
+          <div class="calculator-tips">
+            <h3><i class="fas fa-lightbulb"></i> Consejos para ahorrar energía</h3>
+            <ul class="tips-list">
+              <li><i class="fas fa-check-circle"></i> Usa electrodomésticos con etiqueta A+++ de eficiencia</li>
+              <li><i class="fas fa-check-circle"></i> Configura tu refrigerador a 5°C y el congelador a -18°C</li>
+              <li><i class="fas fa-check-circle"></i> Desconecta cargadores y dispositivos en standby</li>
+              <li><i class="fas fa-check-circle"></i> Aprovecha la luz natural y usa bombillos LED</li>
+              <li><i class="fas fa-check-circle"></i> Usa la lavadora con carga completa y programas fríos</li>
+              <li><i class="fas fa-check-circle"></i> Mantén limpios los filtros del aire acondicionado</li>
+            </ul>
+            
+            <div class="energy-facts">
+              <h3><i class="fas fa-chart-bar"></i> Datos energéticos de Colombia</h3>
+              <div class="fact-item">
+                <div class="fact-value">150 kWh</div>
+                <div class="fact-label">Consumo residencial promedio/mes</div>
+              </div>
+              <div class="fact-item">
+                <div class="fact-value">$900 COP </div>
+                <div class="fact-label">Costo promedio por kWh</div>
+              </div>
+              <div class="fact-item">
+                <div class="fact-value">89%</div>
+                <div class="fact-label">Energía renovable en la matriz</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="result-container" id="resultado" style="display: none;">
+          <div class="result-header">
+            <h3>Resultados de tu cálculo</h3>
+            <button id="reset-calc" class="btn-reset"><i class="fas fa-redo"></i> Nuevo cálculo</button>
+          </div>
+          
+          <div class="result-grid">
+            <div class="result-card">
+              <div class="result-icon">
+                <i class="fas fa-bolt"></i>
+              </div>
+              <div>
+                <div class="result-label">Consumo mensual</div>
+                <div class="result-value" id="consumo-result">0 kWh</div>
+              </div>
+            </div>
+            
+            <div class="result-card">
+              <div class="result-icon">
+                <i class="fas fa-money-bill-wave"></i>
+              </div>
+              <div>
+                <div class="result-label">Costo estimado</div>
+                <div class="result-value" id="costo-result">$0 COP</div>
+              </div>
+            </div>
+            
+            <div class="result-card">
+              <div class="result-icon">
+                <i class="fas fa-leaf"></i>
+              </div>
+              <div>
+                <div class="result-label">Huella de carbono</div>
+                <div class="result-value" id="co2-result">0 kg CO₂</div>
+              </div>
+            </div>
+          </div>
+          
+          <div class="comparison-container">
+            <div class="comparison-title">
+              <i class="fas fa-chart-pie"></i> Comparación con el promedio colombiano
+            </div>
+            <div class="comparison-bar">
+              <div class="bar-fill" id="comparison-bar"></div>
+              <div class="bar-label" id="comparison-label">0% del promedio</div>
+            </div>
+            <div class="comparison-text" id="comparison-text"></div>
+          </div>
+          
+          <div class="savings-tips" id="savings-tips"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="appliances-section">
+    <div class="container">
+      <h2>Consumo típico de electrodomésticos</h2>
+      <p>Conoce el consumo aproximado de los dispositivos más comunes en los hogares colombianos</p>
+      
+      <div class="appliances-grid">
+        <div class="appliance-card">
+          <div class="appliance-icon">
+            <i class="fas fa-snowflake"></i>
+          </div>
+          <h3>Refrigerador</h3>
+          <div class="appliance-power">150-300W</div>
+          <div class="appliance-usage">≈ 60 kWh/mes</div>
+          <div class="appliance-cost">≈ $51,000 COP/mes</div>
+        </div>
+        
+        <div class="appliance-card">
+          <div class="appliance-icon">
+            <i class="fas fa-tv"></i>
+          </div>
+          <h3>Televisor LED</h3>
+          <div class="appliance-power">80-200W</div>
+          <div class="appliance-usage">≈ 15 kWh/mes</div>
+          <div class="appliance-cost">≈ $12,750 COP/mes</div>
+        </div>
+        
+        <div class="appliance-card">
+          <div class="appliance-icon">
+            <i class="fas fa-laptop"></i>
+          </div>
+          <h3>Computador portátil</h3>
+          <div class="appliance-power">30-100W</div>
+          <div class="appliance-usage">≈ 9 kWh/mes</div>
+          <div class="appliance-cost">≈ $7,650 COP/mes</div>
+        </div>
+        
+        <div class="appliance-card">
+          <div class="appliance-icon">
+            <i class="fas fa-wind"></i>
+          </div>
+          <h3>Aire acondicionado</h3>
+          <div class="appliance-power">1000-3000W</div>
+          <div class="appliance-usage">≈ 180 kWh/mes</div>
+          <div class="appliance-cost">≈ $153,000 COP/mes</div>
+        </div>
+        
+        <div class="appliance-card">
+          <div class="appliance-icon">
+            <i class="fas fa-lightbulb"></i>
+          </div>
+          <h3>Bombillo LED</h3>
+          <div class="appliance-power">5-15W</div>
+          <div class="appliance-usage">≈ 3 kWh/mes</div>
+          <div class="appliance-cost">≈ $2,550 COP/mes</div>
+        </div>
+        
+        <div class="appliance-card">
+          <div class="appliance-icon">
+            <i class="fas fa-blender"></i>
+          </div>
+          <h3>Licuadora</h3>
+          <div class="appliance-power">300-600W</div>
+          <div class="appliance-usage">≈ 2 kWh/mes</div>
+          <div class="appliance-cost">≈ $1,700 COP/mes</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <div class="footer-container">
+        <div class="footer-about">
+          <div class="footer-logo">
+            <i class="fas fa-bolt"></i> Energía Colombia
+          </div>
+          <p>Plataforma educativa sobre la transición energética en Colombia y su impacto en el desarrollo sostenible.</p>
+          <div class="social-links">
+            <a href="#"><i class="fab fa-facebook-f"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+          </div>
+        </div>
+        
+        <div class="footer-links">
+          <h3>Enlaces Rápidos</h3>
+          <ul>
+            <li><a href="index.html">Inicio</a></li>
+            <li><a href="hidroelectrica.html">Hidroeléctrica</a></li>
+            <li><a href="solar.html">Energía Solar</a></li>
+            <li><a href="eolica.html">Energía Eólica</a></li>
+            <li><a href="calcula.html">Calculadora</a></li>
+            <li><a href="quienes.html">Sobre Nosotros</a></li>
+          </ul>
+        </div>
+        
+        <div class="footer-contact">
+          <h3>Contacto</h3>
+          <div class="contact-item">
+            <div class="contact-icon">
+              <i class="fas fa-map-marker-alt"></i>
+            </div>
+            <div>Medellín, Antioquia, Colombia</div>
+          </div>
+          <div class="contact-item">
+            <div class="contact-icon">
+              <i class="fas fa-envelope"></i>
+            </div>
+            <div>info@energiacolombia.co</div>
+          </div>
+          <div class="contact-item">
+            <div class="contact-icon">
+              <i class="fas fa-phone"></i>
+            </div>
+            <div>+57 123 456 7890</div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="copyright">
+        <p>&copy; 2023 Energía Colombia. Todos los derechos reservados.</p>
+      </div>
+    </div>
+  </footer>
+  
+
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,2146 @@
+:root {
+  --deep-blue: #0A2342;
+  --teal: #1E2E4F;
+  --light-teal: #31487A;
+  --cream: #FFFDF7;
+  --gold: #F46197;
+  --dark-gold: #b3e1c0
+;
+  --font-main: 'Montserrat', 'Segoe UI', sans-serif;
+  --font-secondary: 'Open Sans', sans-serif;
+}
+
+/* === General Styles === */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--font-secondary);
+  line-height: 1.6;
+  color: #333;
+  background-color: var(--cream);
+}
+
+h1, h2, h3, h4 {
+  font-family: var(--font-main);
+  color: var(--deep-blue);
+  margin-bottom: 1rem;
+}
+
+a {
+  text-decoration: none;
+  color: var(--teal);
+  transition: color 0.3s ease;
+}
+
+a:hover {
+  color: var(--dark-gold);
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* === Header === */
+header {
+  background-color: var(--deep-blue);
+  padding: 1rem 0;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.header-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: white;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.logo span {
+  color: var(--light-teal);
+}
+
+/* === Navigation === */
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 1.5rem;
+}
+
+nav a {
+  color: white;
+  font-weight: 500;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+}
+
+nav a:hover {
+  background-color: rgba(255,255,255,0.1);
+}
+
+/* Dropdown general (oculto por defecto) */
+.dropdown {
+  position: relative;
+}
+
+.dropdown-menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: white;
+  min-width: 200px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  border-radius: 4px;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease;
+  z-index: 1000;
+  padding: 0.5rem 0;
+}
+
+.dropdown:hover .dropdown-menu {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* === Estilo específico para el dropdown de Energías === */
+.dropdown-menu {
+  display: none; /* Oculto por defecto */
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: white;
+  min-width: 200px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  border-radius: 4px;
+  z-index: 1000;
+  padding: 0.5rem 0;
+}
+
+/* Mostrar dropdown al hacer hover */
+.dropdown:hover .dropdown-menu {
+  display: block;
+}
+
+/* Estilo para los items del menú de energías */
+.dropdown-menu li {
+  display: block; /* Esto hace que los items se apilen verticalmente */
+  width: 100%;
+}
+
+.dropdown-menu a {
+  color: var(--deep-blue);
+  display: block;
+  padding: 0.75rem 1.5rem;
+  transition: all 0.2s ease;
+  text-decoration: none;
+}
+
+.dropdown-menu a:hover {
+  background-color: var(--light-teal);
+  color: white;
+}
+
+/* Flecha del dropdown */
+.dropdown i.fa-chevron-down {
+  margin-left: 0.3rem;
+  font-size: 0.8em;
+  transition: transform 0.3s;
+}
+
+.dropdown:hover i.fa-chevron-down {
+  transform: rotate(180deg);
+}
+
+/* === Hero Banner === */
+/*.hero {
+  background: linear-gradient(rgba(10, 35, 66, 0.7), rgba(10, 35, 66, 0.7)), 
+              url('img/colombia-energy.jpg') no-repeat center center/cover;
+  height: 60vh;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  color: white;
+  padding: 0 2rem;
+}*/
+
+.hero-content {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.hero_inicio h1 {
+  font-size: 3rem;
+  color: rgb(212, 199, 199);
+  margin-bottom: 1.5rem;
+}
+
+.hero_hidroelectrica h1 {
+  font-size: 3rem;
+  color: rgb(212, 199, 199);
+  margin-bottom: 1.5rem;
+}
+.hero_solar h1 {
+  font-size: 3rem;
+  color: rgb(212, 199, 199);
+  margin-bottom: 1.5rem;
+}
+.hero_eolica h1 {
+  font-size: 3rem;
+  color: rgb(212, 199, 199);
+  margin-bottom: 1.5rem;
+}
+.hero_biomasa h1 {
+  font-size: 3rem;
+  color: rgb(212, 199, 199);
+  margin-bottom: 1.5rem;
+}
+.hero_gas h1 {
+  font-size: 3rem;
+  color: rgb(212, 199, 199);
+  margin-bottom: 1.5rem;
+}
+.hero_carbon h1 {
+  font-size: 3rem;
+  color: rgb(212, 199, 199);
+  margin-bottom: 1.5rem;
+}
+.hero_acpm h1 {
+  font-size: 3rem;
+  color: rgb(212, 199, 199);
+  margin-bottom: 1.5rem;
+}
+
+.hero p {
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+}
+
+.btn {
+  display: inline-block;
+  background-color: var(--teal);
+  color: white;
+  padding: 0.8rem 1.8rem;
+  border-radius: 4px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.btn:hover {
+  background-color: var(--dark-gold);
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  
+}
+
+/* === Energy Cards === */
+.energy-section {
+  padding: 4rem 0;
+}
+
+.section-title {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.section-title h2 {
+  font-size: 2.5rem;
+  position: relative;
+  display: inline-block;
+}
+
+.section-title h2::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 4px;
+  background-color: var(--teal);
+}
+
+.cards-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 2rem;
+  padding: 0 1rem;
+}
+
+/* Alineación específica para renovables (4 columnas en desktop) */
+.renewables {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2rem;
+  background-color: #f1fdf3;
+  padding: 2rem;
+  border-radius: 12px;
+}
+
+@media (max-width: 992px) {
+  .renewables {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .renewables {
+    grid-template-columns: 1fr;
+  }
+}
+
+.energy-card {
+  background-color: white;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  transition: all 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.energy-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+}
+
+.card-img {
+  height: 200px;
+  overflow: hidden;
+}
+
+.card-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.energy-card:hover .card-img img {
+  transform: scale(1.1);
+}
+
+.card-content {
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  flex-grow: 1;
+}
+
+.card-content h3 {
+  margin-bottom: 0.5rem;
+  color: var(--deep-blue);
+}
+
+.card-content p {
+  margin-bottom: 1rem;
+  color: #666;
+}
+
+.card-stats {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 1rem;
+  padding-top: 1rem;
+  border-top: 1px solid #eee;
+}
+
+.stat-item {
+  text-align: center;
+}
+
+.stat-value {
+  font-weight: 700;
+  color: var(--teal);
+  font-size: 1.2rem;
+}
+
+.stat-label {
+  font-size: 0.8rem;
+  color: #777;
+}
+
+/* Botón */
+.btn {
+  background-color: var(--teal);
+  color: white;
+  text-align: center;
+  padding: 0.6rem 1rem;
+  border-radius: 5px;
+  text-decoration: none;
+  font-weight: bold;
+  margin-top: 1rem;
+  transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+  background-color: #12896c;
+}
+
+/* Fondo para tarjetas no renovables */
+.non-renewables {
+  background-color: #fdf2f2;
+  padding: 2rem;
+  border-radius: 12px;
+}
+
+
+/* === Energy Details === */
+.energy-detail {
+  padding: 4rem 0;
+}
+
+.detail-header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.detail-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+  align-items: center;
+}
+
+.detail-text h2 {
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+  color: var(--deep-blue);
+}
+
+.detail-text p {
+  margin-bottom: 1.5rem;
+}
+
+.pros-cons {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.pros-list, .cons-list {
+  padding: 1.5rem;
+  border-radius: 8px;
+}
+
+.pros-list {
+  background-color: rgba(44, 165, 141, 0.1);
+  border-left: 4px solid var(--teal);
+}
+
+.cons-list {
+  background-color: rgba(244, 97, 151, 0.1);
+  border-left: 4px solid var(--gold);
+}
+
+.pros-list h3, .cons-list h3 {
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+}
+
+.pros-list h3::before {
+  content: '✓';
+  color: var(--teal);
+  margin-right: 0.5rem;
+}
+
+.cons-list h3::before {
+  content: '✗';
+  color: var(--gold);
+  margin-right: 0.5rem;
+}
+
+.pros-list ul, .cons-list ul {
+  list-style-position: inside;
+}
+
+.pros-list li, .cons-list li {
+  margin-bottom: 0.5rem;
+}
+
+.detail-media {
+  position: relative;
+}
+
+.detail-media img {
+  width: 100%;
+  border-radius: 8px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+.video-container {
+  position: relative;
+  padding-bottom: 56.25%; 
+  overflow: hidden;
+}
+
+.video-container iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 8px;
+}
+
+/* === Calculator === */
+.calculator-section {
+  padding: 4rem 0;
+  background-color: #f9f9f9;
+}
+
+.calculator-container {
+  max-width: 600px;
+  margin: 0 auto;
+  background-color: white;
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+}
+
+.form-group {
+  margin-bottom: 1.5rem;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+  color: var(--deep-blue);
+}
+
+.form-control {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 1rem;
+  transition: border-color 0.3s ease;
+}
+
+.form-control:focus {
+  outline: none;
+  border-color: var(--teal);
+}
+
+.btn-calculate {
+  width: 100%;
+  padding: 1rem;
+  background-color: var(--teal);
+  color: white;
+  border: none;
+  border-radius: 4px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.btn-calculate:hover {
+  background-color: var(--dark-gold);
+}
+
+.result-container {
+  margin-top: 2rem;
+  padding: 1.5rem;
+  background-color: rgba(44, 165, 141, 0.1);
+  border-radius: 8px;
+  display: none;
+}
+
+.result-title {
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  color: var(--deep-blue);
+}
+
+.result-value {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--teal);
+}
+
+/* === Footer === */
+footer {
+  background-color: var(--deep-blue);
+  color: white;
+  padding: 3rem 0 1.5rem;
+}
+
+.footer-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+  margin-bottom: 2rem;
+}
+
+.footer-logo {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  color: white;
+}
+
+.footer-about p {
+  margin-bottom: 1rem;
+  color: rgba(255,255,255,0.7);
+}
+
+.social-links {
+  display: flex;
+  gap: 1rem;
+}
+
+.social-links a {
+  color: white;
+  font-size: 1.2rem;
+  transition: color 0.3s ease;
+}
+
+.social-links a:hover {
+  color: var(--light-teal);
+}
+
+.footer-links h3, .footer-contact h3 {
+  font-size: 1.2rem;
+  margin-bottom: 1.5rem;
+  color: white;
+}
+
+.footer-links ul {
+  list-style: none;
+}
+
+.footer-links li {
+  margin-bottom: 0.75rem;
+}
+
+.footer-links a {
+  color: rgba(255,255,255,0.7);
+  transition: color 0.3s ease;
+}
+
+.footer-links a:hover {
+  color: white;
+}
+
+.contact-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  margin-bottom: 1rem;
+  color: rgba(255,255,255,0.7);
+}
+
+.contact-icon {
+  font-size: 1.2rem;
+  color: var(--light-teal);
+}
+
+.copyright {
+  text-align: center;
+  padding-top: 1.5rem;
+  border-top: 1px solid rgba(255,255,255,0.1);
+  color: rgba(255,255,255,0.5);
+  font-size: 0.9rem;
+}
+
+/* === Responsive Design === */
+@media (max-width: 992px) {
+  .detail-content {
+    grid-template-columns: 1fr;
+  }
+  
+  .detail-media {
+    order: -1;
+  }
+}
+
+@media (max-width: 768px) {
+  .header-container {
+    flex-direction: column;
+    gap: 1rem;
+  }
+  
+  nav ul {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  
+  .hero h1 {
+    font-size: 2.5rem;
+  }
+  
+  .pros-cons {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 576px) {
+  .hero h1 {
+    font-size: 2rem;
+  }
+  
+  .hero p {
+    font-size: 1rem;
+  }
+  
+  .cards-container {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* === Page-specific Styles === */
+
+/* Calculator Page */
+.calculator-hero {
+  background: linear-gradient(rgba(10, 35, 66, 0.8), rgba(10, 35, 66, 0.8)), 
+              url('img/calculator-hero.jpg') no-repeat center center/cover;
+  color: white;
+  padding: 5rem 0;
+  text-align: center;
+}
+
+.calculator-hero h1 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.calculator-intro {
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto 3rem;
+}
+
+.calculator-intro h2 {
+  color: var(--deep-blue);
+  margin-bottom: 1rem;
+}
+
+.calculator-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+}
+
+.calculator-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+  box-sizing: border-box;
+}
+
+.calculator-form {
+  background: white;
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+  color: #555;
+}
+
+.form-group label i {
+  margin-right: 8px;
+  color: var(--teal);
+}
+
+.form-control {
+  width: 100%;
+  padding: 0.8rem;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 1rem;
+}
+
+.form-hint {
+  display: block;
+  margin-top: 0.3rem;
+  font-size: 0.8rem;
+  color: #777;
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+.btn-calculate {
+  margin-top: 1rem;
+  background-color: var(--teal);
+  color: white;
+  padding: 0.8rem 1.5rem;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background-color 0.3s;
+}
+
+.btn-calculate:hover {
+  background-color: #088c79;
+}
+
+/* ------------------- Resultados ------------------- */
+.result-container {
+  width: 100%;
+  background-color: #ffffff;
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+  box-sizing: border-box;
+  margin-top: 2rem;
+}
+
+.result-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+  border-bottom: 1px solid #eee;
+  padding-bottom: 1rem;
+}
+
+.result-header h3 {
+  color: var(--deep-blue);
+  margin: 0;
+}
+
+.btn-reset {
+  background: none;
+  border: 1px solid var(--teal);
+  color: var(--teal);
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.btn-reset:hover {
+  background-color: var(--teal);
+  color: white;
+}
+
+.result-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  justify-content: space-between;
+}
+
+.result-card {
+  flex: 1 1 calc(33.333% - 1rem);
+  min-width: 250px;
+  display: flex;
+  align-items: center;
+  background: #f8f9fa;
+  padding: 1.5rem;
+  border-radius: 8px;
+  box-sizing: border-box;
+}
+
+.result-icon {
+  font-size: 2rem;
+  color: var(--teal);
+  margin-right: 1.5rem;
+}
+
+.result-label {
+  font-size: 0.9rem;
+  color: #666;
+  margin-bottom: 0.3rem;
+}
+
+.result-value {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: var(--deep-blue);
+}
+
+/* ------------------- Comparación ------------------- */
+.comparison-container {
+  margin-top: 2rem;
+}
+
+.comparison-title {
+  font-weight: 600;
+  color: #555;
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+}
+
+.comparison-title i {
+  margin-right: 8px;
+  color: var(--teal);
+}
+
+.comparison-bar {
+  height: 30px;
+  background: #f0f0f0;
+  border-radius: 15px;
+  margin-bottom: 0.5rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.bar-fill {
+  height: 100%;
+  background: linear-gradient(to right, var(--teal), #2ecc71);
+  width: 0;
+  transition: width 1s ease-out;
+}
+
+.bar-label {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  font-weight: 600;
+  text-shadow: 0 1px 2px rgba(0,0,0,0.2);
+}
+
+.comparison-text {
+  font-size: 0.9rem;
+  color: #555;
+  line-height: 1.5;
+}
+
+.savings-tips {
+  margin-top: 2rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid #eee;
+}
+
+.savings-tips h4 {
+  color: var(--deep-blue);
+  display: flex;
+  align-items: center;
+}
+
+.savings-tips h4 i {
+  margin-right: 8px;
+  color: var(--teal);
+}
+
+.savings-tips ul {
+  padding-left: 1.5rem;
+  margin-top: 0.5rem;
+}
+
+.savings-tips li {
+  margin-bottom: 0.5rem;
+}
+
+/* ------------------- Electrodomésticos ------------------- */
+.appliances-section {
+  padding: 4rem 0;
+  background-color: #f9f9f9;
+}
+
+.appliances-section h2 {
+  text-align: center;
+  color: var(--deep-blue);
+  margin-bottom: 1rem;
+}
+
+.appliances-section p {
+  text-align: center;
+  max-width: 700px;
+  margin: 0 auto 2rem;
+  color: #666;
+}
+
+.appliances-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+}
+
+.appliance-card {
+  background: white;
+  padding: 1.5rem;
+  border-radius: 8px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+  text-align: center;
+}
+
+.appliance-icon {
+  font-size: 2.5rem;
+  color: var(--teal);
+  margin-bottom: 1rem;
+}
+
+.appliance-card h3 {
+  margin: 0.5rem 0;
+  color: var(--deep-blue);
+}
+
+.appliance-power {
+  font-size: 0.9rem;
+  color: #666;
+  margin-bottom: 0.5rem;
+}
+
+.appliance-usage {
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 0.3rem;
+}
+
+.appliance-cost {
+  font-size: 0.9rem;
+  color: #666;
+}
+
+/* ------------------- Responsive ------------------- */
+@media (max-width: 768px) {
+  .calculator-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .result-grid {
+    flex-direction: column;
+  }
+
+  .result-card {
+    width: 100%;
+  }
+}
+
+
+/* About Us Page */
+.about-section {
+  padding: 4rem 0;
+}
+
+.about-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+  align-items: center;
+}
+
+.about-image img {
+  width: 100%;
+  border-radius: 8px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+.values-section {
+  padding: 4rem 0;
+  background-color: #f9f9f9;
+}
+
+.values-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.value-card {
+  background: white;
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+  text-align: center;
+}
+
+.value-icon {
+  font-size: 2.5rem;
+  color: var(--teal);
+  margin-bottom: 1rem;
+}
+
+.team-section {
+  padding: 4rem 0;
+}
+
+.team-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+/* Flip Card Styles */
+.flip-card {
+  background-color: transparent;
+  width: 100%;
+  height: 400px; /* Aumenté la altura para acomodar la imagen */
+  perspective: 1000px;
+}
+
+.flip-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  border-radius: 8px;
+}
+
+.flip-card:hover .flip-card-inner {
+  transform: rotateY(180deg);
+}
+
+.flip-card-front, .flip-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  border-radius: 8px;
+  background: white;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.flip-card-back {
+  transform: rotateY(180deg);
+  justify-content: flex-start; /* Alinea el contenido arriba */
+}
+
+.flip-card img {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 1rem;
+}
+
+/* Estilo para la imagen trasera */
+.back-image {
+  width: 100%;
+  height: 150px;
+  border-radius: 8px;
+  object-fit: cover;
+  margin-bottom: 1rem;
+  border-radius: 0; /* Quita el borde redondeado si prefieres */
+}
+
+.flip-card h3 {
+  margin: 0.5rem 0;
+  color: #333;
+}
+
+.flip-card p {
+  color: #666;
+  margin: 0.3rem 0;
+}
+
+.flip-card-back p strong {
+  color: #333;
+}
+
+.linkedin-btn {
+  display: inline-block;
+  margin-top: 1rem;
+  padding: 0.5rem 1rem;
+  background-color: #0077b5;
+  color: white;
+  text-decoration: none;
+  border-radius: 4px;
+  transition: background-color 0.3s;
+}
+
+.linkedin-btn:hover {
+  background-color: #005582;
+}
+
+.contact-section {
+  padding: 4rem 0;
+  background-color: #f9f9f9;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.contact-content {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 3rem;
+  margin-top: 2rem;
+  align-items: start;
+}
+
+.contact-form {
+  background: white;
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  margin-bottom: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 1rem;
+  transition: border 0.3s;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+  outline: none;
+  border-color: var(--teal);
+  box-shadow: 0 0 0 2px rgba(0, 128, 128, 0.2);
+}
+
+.contact-form button {
+  background-color: var(--teal);
+  color: white;
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.contact-form button:hover {
+  background-color: #066;
+}
+
+.contact-info {
+  background: white;
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+}
+
+.contact-info p {
+  margin-bottom: 1.2rem;
+  display: flex;
+  align-items: center;
+  font-size: 1rem;
+  color: #333;
+}
+
+.contact-info i {
+  margin-right: 1rem;
+  color: var(--teal);
+  font-size: 1.2rem;
+}
+
+.contact-info h3 {
+  margin-bottom: 1rem;
+}
+
+.contact-info .social-icons {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.contact-info .social-icons a {
+  font-size: 1.4rem;
+  color: #333;
+  transition: color 0.3s;
+}
+
+.contact-info .social-icons a:hover {
+  color: var(--teal);
+}
+
+
+
+/* Energy Source Pages */
+.feature-section {
+  padding: 4rem 0;
+  background-color: #f9f9f9;
+}
+
+.feature-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.feature-card {
+  background: white;
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+  text-align: center;
+}
+
+.feature-icon {
+  font-size: 2.5rem;
+  color: var(--teal);
+  margin-bottom: 1rem;
+}
+
+.impact-section {
+  padding: 4rem 0;
+}
+
+.impact-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+  align-items: center;
+}
+
+.impact-image img {
+  width: 100%;
+  border-radius: 8px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+.comparison-section {
+  padding: 4rem 0;
+  background-color: #f9f9f9;
+}
+
+.comparison-table {
+  overflow-x: auto;
+  margin-top: 2rem;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  background: white;
+}
+
+th, td {
+  padding: 1rem;
+  text-align: left;
+  border-bottom: 1px solid #eee;
+}
+
+th {
+  background-color: var(--deep-blue);
+  color: white;
+}
+
+tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+.future-section {
+  padding: 4rem 0;
+}
+
+.future-content {
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.future-content ul {
+  text-align: left;
+  display: inline-block;
+  margin: 1.5rem 0;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .calculator-grid,
+  .contact-content,
+  .impact-content,
+  .about-content {
+    grid-template-columns: 1fr;
+  }
+  
+  .about-image,
+  .impact-image {
+    order: -1;
+  }
+  
+  .result-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+    /* Estilos específicos para la calculadora */
+    .calculator-hero {
+      background: linear-gradient(rgba(10, 35, 66, 0.8), rgba(10, 35, 66, 0.8)), 
+                  url('img/calculator-hero.jpg') no-repeat center center/cover;
+      color: white;
+      padding: 5rem 0;
+      text-align: center;
+    }
+    
+    .calculator-hero h1 {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+    }
+    
+    .calculator-hero p {
+      font-size: 1.2rem;
+      max-width: 700px;
+      margin: 0 auto;
+    }
+    
+    .calculator-section {
+      padding: 4rem 0;
+    }
+    
+    .calculator-intro {
+      text-align: center;
+      max-width: 800px;
+      margin: 0 auto 3rem;
+    }
+    
+    .calculator-intro h2 {
+      color: var(--deep-blue);
+      margin-bottom: 1rem;
+    }
+    
+    .calculator-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3rem;
+    }
+    
+    .calculator-form {
+      background: white;
+      padding: 2rem;
+      border-radius: 8px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    }
+    
+    .form-group {
+      margin-bottom: 1.5rem;
+    }
+    
+    .form-group label {
+      display: block;
+      margin-bottom: 0.5rem;
+      font-weight: 600;
+      color: #555;
+    }
+    
+    .form-group label i {
+      margin-right: 8px;
+      color: var(--teal);
+    }
+    
+    .form-control {
+      width: 100%;
+      padding: 0.8rem;
+      border: 1px solid #ddd;
+      border-radius: 4px;
+      font-size: 1rem;
+    }
+    
+    .form-hint {
+      display: block;
+      margin-top: 0.3rem;
+      font-size: 0.8rem;
+      color: #777;
+    }
+    
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+    }
+    
+    .btn-calculate {
+      background-color: var(--teal);
+      color: white;
+      border: none;
+      padding: 1rem 2rem;
+      border-radius: 4px;
+      font-size: 1rem;
+      font-weight: 600;
+      cursor: pointer;
+      width: 100%;
+      transition: background-color 0.3s;
+    }
+    
+    .btn-calculate:hover {
+      background-color: #1a9c8a;
+    }
+    
+    .btn-calculate i {
+      margin-right: 8px;
+    }
+    
+    .calculator-tips {
+      background: #f8f9fa;
+      padding: 2rem;
+      border-radius: 8px;
+      border: 1px solid #eee;
+    }
+    
+    .tips-list {
+      list-style: none;
+      padding: 0;
+      margin: 1.5rem 0;
+    }
+    
+    .tips-list li {
+      padding: 0.5rem 0;
+      border-bottom: 1px dashed #ddd;
+    }
+    
+    .tips-list li i {
+      color: var(--teal);
+      margin-right: 8px;
+    }
+    
+    .energy-facts {
+      margin-top: 2rem;
+    }
+    
+    .fact-item {
+      display: flex;
+      align-items: center;
+      margin-bottom: 1rem;
+    }
+    
+    .fact-value {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: var(--deep-blue);
+      min-width: 80px;
+    }
+    
+    .fact-label {
+      color: #666;
+      font-size: 0.9rem;
+      padding-left: 1rem;
+      border-left: 2px solid var(--teal);
+    }
+    
+    .result-container {
+      background: white;
+      padding: 2rem;
+      border-radius: 8px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+      margin-top: 3rem;
+    }
+    
+    .result-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 1.5rem;
+      border-bottom: 1px solid #eee;
+      padding-bottom: 1rem;
+    }
+    
+    .result-header h3 {
+      color: var(--deep-blue);
+      margin: 0;
+    }
+    
+    .btn-reset {
+      background: none;
+      border: 1px solid var(--teal);
+      color: var(--teal);
+      padding: 0.5rem 1rem;
+      border-radius: 4px;
+      cursor: pointer;
+      transition: all 0.3s;
+    }
+    
+    .btn-reset:hover {
+      background-color: var(--teal);
+      color: white;
+    }
+    
+    .result-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+      margin-bottom: 2rem;
+    }
+    
+    .result-card {
+      display: flex;
+      align-items: center;
+      background: #f8f9fa;
+      padding: 1.5rem;
+      border-radius: 8px;
+    }
+    
+    .result-icon {
+      font-size: 2rem;
+      color: var(--teal);
+      margin-right: 1.5rem;
+    }
+    
+    .result-label {
+      font-size: 0.9rem;
+      color: #666;
+      margin-bottom: 0.3rem;
+    }
+    
+    .result-value {
+      font-size: 1.3rem;
+      font-weight: 700;
+      color: var(--deep-blue);
+    }
+    
+    .comparison-container {
+      margin-top: 2rem;
+    }
+    
+    .comparison-title {
+      font-weight: 600;
+      color: #555;
+      margin-bottom: 1rem;
+      display: flex;
+      align-items: center;
+    }
+    
+    .comparison-title i {
+      margin-right: 8px;
+      color: var(--teal);
+    }
+    
+    .comparison-bar {
+      height: 30px;
+      background: #f0f0f0;
+      border-radius: 15px;
+      margin-bottom: 0.5rem;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .bar-fill {
+      height: 100%;
+      background: linear-gradient(to right, var(--teal), #2ecc71);
+      width: 0;
+      transition: width 1s ease-out;
+    }
+    
+    .bar-label {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      color: white;
+      font-weight: 600;
+      text-shadow: 0 1px 2px rgba(0,0,0,0.2);
+    }
+    
+    .comparison-text {
+      font-size: 0.9rem;
+      color: #555;
+      line-height: 1.5;
+    }
+    
+    .savings-tips {
+      margin-top: 2rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid #eee;
+    }
+    
+    .savings-tips h4 {
+      color: var(--deep-blue);
+      display: flex;
+      align-items: center;
+    }
+    
+    .savings-tips h4 i {
+      margin-right: 8px;
+      color: var(--teal);
+    }
+    
+    .savings-tips ul {
+      padding-left: 1.5rem;
+      margin-top: 0.5rem;
+    }
+    
+    .savings-tips li {
+      margin-bottom: 0.5rem;
+    }
+    
+    .appliances-section {
+      padding: 4rem 0;
+      background-color: #f9f9f9;
+    }
+    
+    .appliances-section h2 {
+      text-align: center;
+      color: var(--deep-blue);
+      margin-bottom: 1rem;
+    }
+    
+    .appliances-section p {
+      text-align: center;
+      max-width: 700px;
+      margin: 0 auto 2rem;
+      color: #666;
+    }
+    
+    .appliances-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 2rem;
+    }
+    
+    .appliance-card {
+      background: white;
+      padding: 1.5rem;
+      border-radius: 8px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+      text-align: center;
+    }
+    
+    .appliance-icon {
+      font-size: 2.5rem;
+      color: var(--teal);
+      margin-bottom: 1rem;
+    }
+    
+    .appliance-card h3 {
+      margin: 0.5rem 0;
+      color: var(--deep-blue);
+    }
+    
+    .appliance-power {
+      font-size: 0.9rem;
+      color: #666;
+      margin-bottom: 0.5rem;
+    }
+    
+    .appliance-usage {
+      font-weight: 600;
+      color: #333;
+      margin-bottom: 0.3rem;
+    }
+    
+    .appliance-cost {
+      font-size: 0.9rem;
+      color: #666;
+    }
+    
+    @media (max-width: 768px) {
+      .calculator-grid {
+        grid-template-columns: 1fr;
+      }
+      
+      .result-grid {
+        grid-template-columns: 1fr;
+      }
+      
+      .form-row {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .hero_inicio {
+  background: 
+    linear-gradient(rgba(10, 35, 66, 0.7), rgba(10, 35, 66, 0.7)),
+    url('../imagenes/energias_renobables.jpg') no-repeat center center/cover;
+  height: 60vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: white;
+  padding: 60px 20px;
+  font-size: clamp(1.5rem, 5vw, 2em); /* ajuste responsivo */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.hero_hidroelectrica {
+  background: 
+    linear-gradient(rgba(10, 35, 66, 0.7), rgba(10, 35, 66, 0.7)),
+    url('../imagenes/hidroelectrica.avif') no-repeat center center/cover;
+  height: 60vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: white;
+  padding: 60px 20px;
+  font-size: clamp(1.5rem, 5vw, 2em); /* ajuste responsivo */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+.hero_solar {
+  background: 
+    linear-gradient(rgba(10, 35, 66, 0.7), rgba(10, 35, 66, 0.7)),
+    url('../imagenes/solae.webp') no-repeat center center/cover;
+  height: 60vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: white;
+  padding: 60px 20px;
+  font-size: clamp(1.5rem, 5vw, 2em); /* ajuste responsivo */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+.hero_eolica {
+  background: 
+    linear-gradient(rgba(10, 35, 66, 0.7), rgba(10, 35, 66, 0.7)),
+    url('../imagenes/eolica.jpg') no-repeat center center/cover;
+  height: 60vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: white;
+  padding: 60px 20px;
+  font-size: clamp(1.5rem, 5vw, 2em); /* ajuste responsivo */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+.hero_biomasa {
+  background: 
+    linear-gradient(rgba(10, 35, 66, 0.7), rgba(10, 35, 66, 0.7)),
+    url('../imagenes/biomasa.avif') no-repeat center center/cover;
+  height: 60vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: white;
+  padding: 60px 20px;
+  font-size: clamp(1.5rem, 5vw, 2em); /* ajuste responsivo */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+.hero_carbon {
+  background: 
+    linear-gradient(rgba(10, 35, 66, 0.7), rgba(10, 35, 66, 0.7)),
+    url('../imagenes/carbon.jpg') no-repeat center center/cover;
+  height: 60vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: white;
+  padding: 60px 20px;
+  font-size: clamp(1.5rem, 5vw, 2em); /* ajuste responsivo */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+.hero_gas {
+  background: 
+    linear-gradient(rgba(10, 35, 66, 0.7), rgba(10, 35, 66, 0.7)),
+    url('../imagenes/gas.jpg') no-repeat center center/cover;
+  height: 60vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: white;
+  padding: 60px 20px;
+  font-size: clamp(1.5rem, 5vw, 2em); /* ajuste responsivo */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+.hero_acpm {
+  background: 
+    linear-gradient(rgba(10, 35, 66, 0.7), rgba(10, 35, 66, 0.7)),
+    url('../imagenes/acpm.webp') no-repeat center center/cover;
+  height: 60vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: white;
+  padding: 60px 20px;
+  font-size: clamp(1.5rem, 5vw, 2em);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+.hero_nosotros {
+  background: 
+    linear-gradient(rgba(75, 121, 179, 0.7), rgba(10, 35, 66, 0.7)),
+    url('../imagenes/Hidroituango-715.jpg') no-repeat center center/cover;
+  height: 60vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: white;
+  padding: 60px 20px;
+  font-size: clamp(1.5rem, 5vw, 2em);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+  
+/* Contenedor principal de gráficas */
+.charts-container {
+    margin: 25px auto 0;
+    padding: 15px 0 0;
+    border-top: 1px solid #eee;
+    max-width: 800px;
+}
+
+/* Contenedor flexible para las dos gráficas */
+.charts-flex {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    justify-content: center;
+    align-items: flex-start;
+    margin-top: 10px;
+}
+
+/* Contenedor individual para cada gráfica */
+.chart-wrapper {
+    flex: 1 1 300px;
+    min-width: 280px;
+    max-width: 400px;
+    background: white;
+    padding: 12px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
+
+/* Títulos de las gráficas */
+.chart-title {
+    text-align: center;
+    font-size: 0.95rem;
+    color: #007BFF;
+    margin-bottom: 10px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+}
+
+/* Canvas de Chart.js - Ajuste responsivo */
+.chart-container {
+    position: relative;
+    width: 100%;
+    height: 220px; /* Altura fija para ambas gráficas */
+    margin: 0 auto;
+}
+
+/* Ajustes específicos para pantallas pequeñas */
+@media (max-width: 768px) {
+    .charts-flex {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .chart-wrapper {
+        width: 100%;
+        max-width: 100%;
+    }
+    
+    .chart-container {
+        height: 200px;
+    }
+}
+
+/* Ajustes para tooltips y leyendas */
+.chartjs-tooltip {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 0.8rem;
+    background: rgba(0, 0, 0, 0.8);
+    border-radius: 4px;
+    padding: 6px 10px;
+    color: white;
+}
+
+/* Leyenda del gráfico de torta */
+.chartjs-legend {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 8px;
+    font-size: 0.8rem;
+}
+
+.chartjs-legend li {
+    display: flex;
+    align-items: center;
+    margin: 0 8px 4px 0;
+}
+
+.chartjs-legend li span {
+    display: inline-block;
+    width: 12px;
+    height: 12px;
+    margin-right: 5px;
+    border-radius: 2px;
+}
+
+
+/*download-section*/
+
+.download-section {
+  margin-top: 4rem;
+  text-align: center;
+}
+
+.download-section h3 {
+  font-size: 1.5rem;
+  margin-bottom: 1.5rem;
+  color: #0a2342;
+}
+
+.download-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1.5rem;
+}
+
+.download-btn {
+  display: inline-block;
+  padding: 0.75rem 1.5rem;
+  background-color: var(--teal);
+  color: #fff;
+  text-decoration: none;
+  font-weight: 600;
+  border-radius: 8px;
+  transition: background-color 0.3s ease;
+}
+
+.download-btn:hover {
+  background-color: #066;
+}
+.estrato-info {
+  background-color: #f8f9fa;
+  border-left: 4px solid #007bff;
+  padding: 15px;
+  margin-bottom: 20px;
+  border-radius: 0 4px 4px 0;
+}
+
+.estrato-info h4 {
+  margin-top: 0;
+  color: #007bff;
+  display: flex;
+  align-items: center;
+}
+
+.estrato-info h4 i {
+  margin-right: 10px;
+}
+
+.estrato-info p {
+  margin-bottom: 5px;
+  color: #555;
+}
+
+/* Estilos para el contenedor de gráficos */
+.charts-container {
+  margin-top: 30px;
+  padding-top: 20px;
+  border-top: 1px solid #eee;
+}
+
+.chart-wrapper {
+  background: white;
+  padding: 15px;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+  margin-bottom: 20px;
+}
+
+.chart-title {
+  text-align: center;
+  margin-bottom: 15px;
+  color: var(--deep-blue);
+  font-weight: 600;
+}
+
+/* Estilos para el formulario de estrato */
+#estrato-group {
+  margin-bottom: 20px;
+}
+
+#estrato-group label {
+  display: flex;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+#estrato-group label i {
+  margin-right: 8px;
+  color: var(--teal);
+}
+
+#estrato {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 1rem;
+}
+
+/* Agrega esto al final del archivo CSS */
+
+/* Estilos para el contenedor de gráficos */
+/* Contenedor del gráfico */
+.charts-container {
+    margin: 30px 0;
+    padding: 20px;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    text-align: center;
+}
+
+.chart-wrapper {
+    position: relative;
+    margin: 0 auto;
+    width: 100%;
+    max-width: 500px;
+}
+
+/* Asegurar que el canvas tenga dimensiones */
+#pieChart {
+    width: 100% !important;
+    height: auto !important;
+    max-height: 400px;
+}
+
+/* Estilos para la leyenda */
+.chartjs-legend {
+    list-style: none;
+    padding: 0;
+    margin: 15px 0 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+}
+
+.chartjs-legend li {
+    display: flex;
+    align-items: center;
+    margin: 5px;
+    font-size: 0.8rem;
+}
+
+.chartjs-legend li span {
+    display: inline-block;
+    width: 12px;
+    height: 12px;
+    margin-right: 5px;
+    border-radius: 50%;
+}
